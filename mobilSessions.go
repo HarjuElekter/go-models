@@ -1,6 +1,10 @@
 package model
 
-import "time"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type MobileSession struct {
 	ID                 int64      `gorm:"primaryKey"`
@@ -19,4 +23,14 @@ type MobileSession struct {
 
 func (MobileSession) TableName() string {
 	return "mobile_sessions"
+}
+
+func (m *MobileSession) BeforeCreate(tx *gorm.DB) (err error) {
+	m.LoginTime = time.Now()
+
+	return
+}
+
+func (m *MobileSession) Create(db *gorm.DB) error {
+	return db.Create(m).Error
 }
