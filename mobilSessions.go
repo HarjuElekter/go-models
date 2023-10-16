@@ -32,10 +32,21 @@ func (m *MobileSession) BeforeCreate(tx *gorm.DB) (err error) {
 	return
 }
 
+// Create - create user login record
 func (m *MobileSession) Create(db *gorm.DB) (err error) {
 	err = db.Create(m).Error
 	if err != nil {
-		log.Error("MobileSessions Create error: %s", err)
+		log.Error("MobileSession Create error: %s", err)
+	}
+
+	return
+}
+
+// UpdatreLogout - set logout_time to time now
+func (m *MobileSession) UpdateLogout(db *gorm.DB) (err error) {
+	err = db.Where("session_id = ?", m.SessionID).Model(m).Update("logout_time", time.Now()).Error
+	if err != nil {
+		log.Error("MobileSession UpdateLogout error: %s", err)
 	}
 
 	return
