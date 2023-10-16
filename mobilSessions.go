@@ -3,6 +3,7 @@ package model
 import (
 	"time"
 
+	"github.com/dainiauskas/go-log"
 	"gorm.io/gorm"
 )
 
@@ -31,6 +32,11 @@ func (m *MobileSession) BeforeCreate(tx *gorm.DB) (err error) {
 	return
 }
 
-func (m *MobileSession) Create(db *gorm.DB) error {
-	return db.Create(m).Error
+func (m *MobileSession) Create(db *gorm.DB) (err error) {
+	err = db.Create(m).Error
+	if err != nil {
+		log.Error("MobileSessions Create error: %s", err)
+	}
+
+	return
 }
