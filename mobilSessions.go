@@ -19,7 +19,7 @@ type MobileSession struct {
 }
 
 func (MobileSession) TableName() string {
-	return "mobile_sessions"
+	return "wms_mobile_sessions"
 }
 
 func (m *MobileSession) BeforeCreate(tx *gorm.DB) (err error) {
