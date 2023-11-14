@@ -1,6 +1,8 @@
 package model
 
 import (
+	"time"
+
 	"github.com/dainiauskas/go-types"
 )
 
@@ -10,8 +12,8 @@ type PickDocument struct {
 	Transfer   string     `gorm:"size:20;index"`
 	Production string     `gorm:"size:20;index"`
 	Project    string     `gorm:"size:20;index"`
-	StartDate  types.Date `gorm:"type:date"`
-	EndDate    types.Date `gorm:"type:date"`
+	Start      time.Time  `gorm:"type:datetime"`
+	End        time.Time  `gorm:"type:datetime"`
 	DueDate    types.Date `gorm:"type:date"`
 	Lines      uint       ``
 	Assigned   uint       ``
