@@ -13,7 +13,7 @@ type PickDocument struct {
 	Production string     `gorm:"size:20;index"`
 	Project    string     `gorm:"size:20;index"`
 	Start      time.Time  `gorm:"type:datetime"`
-	End        time.Time  `gorm:"type:datetime"`
+	End        *time.Time `gorm:"type:datetime"`
 	DueDate    types.Date `gorm:"type:date"`
 	Lines      uint       ``
 	Assigned   uint       ``
