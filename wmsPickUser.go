@@ -1,12 +1,12 @@
 package model
 
-import "time"
+import "github.com/dainiauskas/go-types"
 
 type PickUser struct {
-	Date           time.Time `gorm:"type:date;primaryKey"`
-	UserName       string    `gorm:"size:50;primaryKey"`
-	Scanned        uint      ``
-	PickDocumentID uint      ``
+	Date           types.Date `gorm:"type:date;primaryKey"`
+	UserName       string     `gorm:"size:50;primaryKey"`
+	Scanned        uint       ``
+	PickDocumentID uint       ``
 }
 
 func (PickUser) TableName() string {
