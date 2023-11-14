@@ -1,6 +1,8 @@
 package model
 
 import (
+	"time"
+
 	"github.com/dainiauskas/go-types"
 )
 
@@ -12,7 +14,7 @@ type PickDocument struct {
 	Project    string     `gorm:"size:20;index"`
 	Startdate  types.Date `gorm:"type:date"`
 	EndDate    types.Date `gorm:"type:date"`
-	DueDate    types.Date `grom:"type:date"`
+	DueDate    *time.Time `grom:"type:date"`
 	Lines      uint       ``
 	Assigned   uint       ``
 	Users      []PickUser
