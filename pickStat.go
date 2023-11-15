@@ -10,6 +10,7 @@ type PicksStat struct {
 	DocAssigned   uint        `gorm:"type:smallint unsigned" json:"picksAssigned"`
 	Lines         uint        `gorm:"type:smallint unsigned" json:"pickLines"`
 	LinesAssigned uint        `gorm:"type:smallint unsigned" json:"pickScanned"`
+	UserScanned   uint        `gorm:"-" json:"userScanned"`
 	ByUser        []*PickUser `gorm:"-" json:"byUser"`
 }
 
