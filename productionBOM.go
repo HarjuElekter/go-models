@@ -4,7 +4,8 @@ import "time"
 
 type ProductionBOMLog struct {
 	ID          uint       `gorm:"primaryKey"`
-	Type        uint8      `json:"type"`
+	Action      uint8      `json:"action"`
+	Type        string     `json:"type"`
 	UserName    string     `json:"username"`
 	BOMNo       string     `gorm:"size:20" json:"bomNo"`
 	ItemNo      string     `gorm:"size:20" json:"item_no"`
