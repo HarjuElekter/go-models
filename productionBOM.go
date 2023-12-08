@@ -8,7 +8,7 @@ type ProductionBOMLog struct {
 	Type        string     `json:"type"`
 	UserName    string     `json:"username"`
 	BOMNo       string     `gorm:"size:20" json:"bomNo"`
-	ItemNo      string     `gorm:"size:20" json:"item_no"`
+	ItemNo      string     `gorm:"size:20" json:"itemNo"`
 	Quantity    float64    `json:"quantity"`
 	SystemId    string     `gorm:"size:50;index" json:"systemId"`
 	OperationAt *time.Time `gorm:"type:datetime" json:"operationAt"`
