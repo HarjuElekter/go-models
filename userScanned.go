@@ -8,7 +8,7 @@ import (
 )
 
 type UserScanned struct {
-	Date         types.Date `gorm:"type:date;primaryKey" json:"-"`
+	Date         types.Date `gorm:"type:date;primaryKey" json:"date"`
 	UserName     string     `gorm:"size:50;primaryKey" json:"username"`
 	Lines        uint       `gorm:"smallint unsigned" json:"lines"`
 	Start        *time.Time `gorm:"" json:"start"`
