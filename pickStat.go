@@ -5,7 +5,7 @@ import (
 )
 
 type PicksStat struct {
-	Date          types.Date  `gorm:"type:date;primaryKey" json:"date"`
+	Date          types.Date  `gorm:"type:date;primaryKey" json:"-"`
 	Documents     uint        `gorm:"type:smallint unsigned" json:"picksAll"`
 	DocAssigned   uint        `gorm:"type:smallint unsigned" json:"picksAssigned"`
 	Lines         uint        `gorm:"type:smallint unsigned" json:"pickLines"`
