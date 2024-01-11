@@ -22,11 +22,10 @@ type ProdWorkShiftTime struct {
 
 // Darbuotojų darbo grafikas
 type ProdWorkShiftSchedule struct {
-	ID             uint              `gorm:"primaryKey"`
-	WCSShiftTimeID uint              ``
-	WCSShiftTime   ProdWorkShiftTime ``
-	Date           time.Time         `gorm:"type:date"`
-	EmployeeNo     string            `gorm:"size:20"`
+	ID             uint      `gorm:"primaryKey"`
+	WCSShiftTimeID uint      ``
+	Date           time.Time `gorm:"type:date"`
+	EmployeeNo     string    `gorm:"size:20"`
 }
 
 // Darbuotojų darbo registracija
