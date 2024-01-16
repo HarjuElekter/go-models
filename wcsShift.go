@@ -4,9 +4,9 @@ import "time"
 
 // Pamainų sąrašas
 type ProdWorkShift struct {
-	ID                 uint   `gorm:"primaryKey"`
-	Name               string `gorm:"size:40;unique"`
-	ProdWorkShiftTimes []ProdWorkShiftTime
+	ID                 uint                `gorm:"primaryKey" json:"id"`
+	Name               string              `gorm:"size:40;unique" json:"name"`
+	ProdWorkShiftTimes []ProdWorkShiftTime `json:"times"`
 }
 
 // Pamainos grafikas
