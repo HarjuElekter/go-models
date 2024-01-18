@@ -33,6 +33,7 @@ type ProdWorkShiftRegister struct {
 	ID                  uint              `gorm:"PrimaryKey"`
 	ProdWorkShiftTimeID uint              ``
 	ProdWorkShiftTime   ProdWorkShiftTime ``
+	EmployeeNo          string            `gorm:"size:20"`
 	WorkStart           time.Time         `gorm:"type:time"`
 	WorkEnd             *time.Time        `gorm:"type:time"`
 }
